@@ -13,6 +13,7 @@ class BlobGivingBot(commands.AutoShardedBot):
         super().__init__(
             command_prefix=config.prefix,
             owner_id=config.owner_id,
+            fetch_offline_members=False,
         )
 
         self.add_command(self.rtt)
