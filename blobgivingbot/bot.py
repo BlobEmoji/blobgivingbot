@@ -24,7 +24,7 @@ class BlobGivingBot(commands.AutoShardedBot):
             return
 
         channel_id = message.channel.id
-        if channel_id not in config.command_channels or channel_id != config.giveaway_channel:
+        if channel_id not in config.command_channels and channel_id != config.giveaway_channel:
             return
 
         await self.process_commands(message)
