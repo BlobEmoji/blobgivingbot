@@ -19,6 +19,12 @@ there's no public bot instance you can simply invite.
 
 It is however really simple to run your own instance for your own Discord Servers:
 
-- Simply rename ``config_example.py`` to ``config.py`` and fill it out with your credentials.
+*Note: BlobGivingBot is not supported on Windows when ran by source. If you want to run the bot on Windows, you have to use docker-compose.*
+
+- Rename ``example_config.py`` to ``config.py`` and fill it out with your credentials.
+
+- Install all requirements using `pip install -r requirements.txt`.
+
+- Run the bot.
 
 - Invoke commands in any specified command channels using your prefix.
