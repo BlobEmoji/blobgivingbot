@@ -19,7 +19,7 @@ there's no public bot instance you can simply invite.
 
 It is however really simple to run your own instance for your own Discord Servers:
 
-Note: BlobGivingBot is not supported on Windows.
+*Note: BlobGivingBot is not supported on Windows.*
 
 - Rename ``example_config.py`` to ``config.py`` and fill it out with your credentials.
 
