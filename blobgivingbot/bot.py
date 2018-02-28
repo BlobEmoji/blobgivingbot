@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 
+import logging
+
 import discord
 from discord.ext import commands
 
 import config
 
 from .utils import Timer
+
+
+log = logging.getLogger(__name__)
 
 
 class BlobGivingBot(commands.AutoShardedBot):
@@ -28,6 +33,12 @@ class BlobGivingBot(commands.AutoShardedBot):
             return
 
         await self.process_commands(message)
+
+    async def on_error(self, event_method, *args, **kwargs):
+        log.exception(f'Ran into an error in the {event_method} event.')
+
+    async def on_command_error(self, context, exception):
+        log.exception(f'Ran into an error while running the {context.command.name} command.', exc_info=exception)
 
     @commands.command(aliases=['ping', 'p'])
     async def rtt(self, ctx: commands.Context):
