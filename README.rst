@@ -14,7 +14,7 @@ BlobGivingBot is a simple Discord Bot to hold giveaways in a single Discord Serv
 Using BlobGivingBot
 -------------------
 
-BlobGivingBot is meant for use in the `Blob Emoji Discord Server <https://discord.gg/xTf9URq>`_,
+BlobGivingBot is meant for use in the `Blob Emoji Discord Server <https://discord.gg/E7Y3TNC>`_,
 there's no public bot instance you can simply invite.
 
 It is however really simple to run your own instance for your own Discord Servers:
