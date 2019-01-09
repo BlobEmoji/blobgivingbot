@@ -127,7 +127,7 @@ class Giveaways:
                 embed.description = f'{winner.mention} won this giveaway!'
                 await message.edit(embed=embed)
 
-                await self.channel.send(f'Congratulations {winner.mention}! You won **{giveaway_desc}**!')
+                await self.channel.send(f'Congratulations {winner.mention}! You won **{giveaway_desc}**! DM <@489886869291794433> to claim your prize!')
             finally:
                 await self.config.remove(oldest)
 
