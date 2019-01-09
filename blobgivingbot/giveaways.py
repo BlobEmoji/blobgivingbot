@@ -131,8 +131,8 @@ class Giveaways:
                     f'Congratulations {winner.mention}! You won **{giveaway_desc}**! '
                     f'DM <@489886869291794433> to claim your prize!'
                 )
-                
-                finally:
+
+            finally:
                 await self.config.remove(oldest)
 
     async def roll_user(self, message: discord.Message) -> discord.Member:
