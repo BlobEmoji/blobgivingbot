@@ -14,9 +14,10 @@ log = logging.getLogger(__name__)
 class BlobGivingBot(commands.AutoShardedBot):
     def __init__(self):
         super().__init__(
+            activity=config.activity,
             command_prefix=config.prefix,
-            owner_id=config.owner_id,
             fetch_offline_members=False,
+            owner_id=config.owner_id,
         )
 
         self.load_extension('jishaku')

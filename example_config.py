@@ -2,6 +2,9 @@
 
 import datetime
 
+import discord
+
+
 token = 'beep.boop.secret'
 
 prefix = '$'
@@ -14,3 +17,5 @@ giveaway_duration = datetime.timedelta(days=1)
 
 # channels in which the bot responds to commands, all others are ignored
 command_channels = {384121527437885440}
+
+activity = discord.Game('https://blobs.gg')
