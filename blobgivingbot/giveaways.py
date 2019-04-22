@@ -20,7 +20,7 @@ class NoWinnerFound(Exception):
     pass
 
 
-class Giveaways:
+class Giveaways(commands.Cog):
     """Simple giveaway management commands."""
 
     def __init__(self, bot: BlobGivingBot):
@@ -29,7 +29,7 @@ class Giveaways:
         self.config = Config('giveaways')
         self._giveaway_task = bot.loop.create_task(self.giveaway_loop())
 
-    def __unload(self):
+    def cog_unload(self):
         self._giveaway_task.cancel()
 
     @property
@@ -66,7 +66,7 @@ class Giveaways:
     async def reroll(self, ctx: commands.Context, *, message_id: int):
         """Reroll a giveaway based on a message/giveaway ID."""
         try:
-            message = await self.channel.get_message(message_id)
+            message = await self.channel.fetch_message(message_id)
         except discord.NotFound:
             return await ctx.send(f'Couldn\'t find message with ID {message_id} in the giveaway channel!')
 
@@ -102,7 +102,7 @@ class Giveaways:
             message_id = self.config.get(oldest)
 
             try:
-                message = await self.channel.get_message(message_id)
+                message = await self.channel.fetch_message(message_id)
             except discord.NotFound:
                 # giveaways might be removed for moderation purposes, we don't want to post anything in this case
                 log.warning(f'Couldn\'t find message associated with giveaway {message_id}, skipping')
